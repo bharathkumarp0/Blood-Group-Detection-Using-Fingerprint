@@ -56,23 +56,7 @@ This project demonstrates an end-to-end pipeline, from a user-friendly frontend 
 
 ---
 
-## 🎨 User Interfaces
 
-### Next.js Frontend
-The frontend provides a modern and intuitive user interface for uploading fingerprint images and viewing predictions.  
-
-Example screenshot:  
-![Next.js Interface Preview](https://via.placeholder.com/600x300)  
-*Replace this placeholder with an actual screenshot.*
-
-### Gradio Backend  
-The Gradio interface serves as a functional demo for testing the ML model.  
-
-Example screenshot:  
-![Gradio Interface Preview](https://via.placeholder.com/600x300)  
-*Replace this placeholder with an actual screenshot.*
-
----
 
 ## 📂 Directory Structure
 
@@ -86,68 +70,3 @@ Example screenshot:
 ├── app.py                  # Gradio backend code
 ├── requirements.txt        # Dependencies for backend
 └── README.md               # Project documentation
-
-
-
-### Key Updates:
-- Included the **Next.js** frontend in the tech stack and workflow.
-- Added instructions for running the frontend.
-- Updated directory structure to reflect the frontend and backend split.
-- Provided placeholders for screenshots of the interfaces.
-
-
-🔧 Installation
-Frontend
-Navigate to the frontend directory:
-
-bash
-Copy code
-cd frontend
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the development server:
-
-bash
-Copy code
-npm run dev
-Open your browser and go to:
-
-arduino
-Copy code
-http://localhost:3000/
-Backend
-Navigate to the backend directory:
-
-bash
-Copy code
-cd backend
-Install dependencies:
-
-bash
-Copy code
-pip install -r requirements.txt
-Run the Gradio app:
-
-bash
-Copy code
-python app.py
-The backend will run at:
-
-arduino
-Copy code
-http://127.0.0.1:7860/
-📈 Results and Visualizations
-Accuracy Achieved: X%
-Model Performance: Include metrics like confusion matrix, ROC curve, etc.
-📝 Future Work
-Enhance the dataset for better accuracy.
-Explore cloud deployment for both frontend and backend.
-Integrate more features to improve predictions and user experience.
-🤝 Acknowledgments
-This project was developed as part of an internship at Shadowfax Company. Special thanks to mentors and collaborators for their guidance and support.
-
-📜 License
-This project is licensed under the MIT License.
