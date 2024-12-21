@@ -1,72 +1,79 @@
-# Blood Group Detection Using Fingerprint (BGDUF)
+# Blood Group Detection Using Fingerprint
 
-![Gradio App](https://img.shields.io/badge/Gradio-App-blue)  
-![Frontend](https://img.shields.io/badge/Frontend-Next.js-green)  
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Enabled-brightgreen)  
+This project uses machine learning (Support Vector Machine) to predict blood groups from fingerprint images. It uses HOG (Histogram of Oriented Gradients) features extracted from fingerprint images to train a model that can classify fingerprints into different blood groups.
 
-## 🩸 Overview
+## Requirements
 
-The **Blood Group Detection Using Fingerprint (BGDUF)** project combines machine learning with a modern web interface to predict blood groups based on fingerprint patterns. The solution offers a seamless experience by integrating a **Next.js-based frontend** with a **Gradio-hosted machine learning model**.  
+- Python 3.9 or higher
+- OpenCV
+- scikit-learn
+- scikit-image
+- numpy
+- pandas
+- tqdm
 
-This project demonstrates an end-to-end pipeline, from a user-friendly frontend to a robust backend prediction model.  
+## Installation
 
----
+1. Clone the repository:
+```bash
+git clone https://github.com/Tushar-Shinde31/Blood_Group_Detection_Using_Fingerprint.git
+cd Blood_Group_Detection_Using_Fingerprint
+```
 
-## 🔍 Features
+2. Install the required packages:
+```bash
+pip install numpy pandas scikit-learn opencv-python scikit-image tqdm
+```
 
-- **Non-invasive Detection:** Predict blood groups from fingerprint patterns.  
-- **Modern Frontend:** Built with **Next.js**, offering a sleek and responsive user interface.  
-- **Gradio Backend:** Simple and effective machine learning model deployment.  
-- **End-to-End Pipeline:** From data collection to model deployment and user interaction.  
+## Project Structure
 
----
-
-## 🚀 How It Works
-
-1. **Frontend:**  
-   - Users interact with a clean and responsive web interface built in **Next.js**.  
-   - Fingerprint images are uploaded via the web app.  
-
-2. **Backend:**  
-   - The uploaded fingerprint is sent to a **Gradio-hosted machine learning model** for prediction.  
-
-3. **Prediction:**  
-   - The backend processes the input and predicts the blood group.  
-   - Results are displayed instantly on the frontend.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** Next.js (React-based framework)  
-- **Backend:** Python with Gradio  
-- **Machine Learning Frameworks:** TensorFlow/PyTorch  
-- **Other Tools:** NumPy, Pandas, Matplotlib  
-
----
-
-## 🧪 Model Training and Evaluation
-
-- **Dataset:** Fingerprint dataset labeled with blood groups.  
-- **Metrics:** Accuracy, Precision, Recall, F1-Score.  
-- **Preprocessing:**  
-  - Image resizing and normalization.  
-  - Data augmentation for robustness.  
-- **Model Architecture:** [Brief description, e.g., CNN model with X layers]  
-
----
-
-
-
-## 📂 Directory Structure
-
-```plaintext
+```
 .
-├── frontend/               # Next.js frontend
-├── backend/                # Gradio app and ML model
-├── data/                   # Dataset used for training and testing
-├── models/                 # Trained models
-├── notebooks/              # Jupyter notebooks for experiments
-├── app.py                  # Gradio backend code
-├── requirements.txt        # Dependencies for backend
-└── README.md               # Project documentation
+├── train/              # Training data directory
+│   ├── O-/            # Fingerprint images for O- blood group
+│   ├── O+/            # Fingerprint images for O+ blood group
+│   ├── A-/            # Fingerprint images for A- blood group
+│   ├── A+/            # Fingerprint images for A+ blood group
+│   ├── AB+/           # Fingerprint images for AB+ blood group
+│   ├── AB-/           # Fingerprint images for AB- blood group
+│   ├── B-/            # Fingerprint images for B- blood group
+│   └── B+/            # Fingerprint images for B+ blood group
+├── detect_blood_group.py  # Main model training and feature extraction code
+├── predict.py         # Script to predict blood group from a new fingerprint
+└── README.md         # This file
+```
+
+## Usage
+
+1. First, organize your fingerprint images in the `train` directory. Each blood group should have its own subdirectory containing the relevant fingerprint images.
+
+2. To train the model and test it on a new fingerprint image:
+```bash
+python predict.py path/to/your/fingerprint/image.jpg
+```
+
+The script will:
+1. Train the model using the images in the `train` directory
+2. Use the trained model to predict the blood group from your input image
+3. Display the predicted blood group and confidence score
+
+## Model Details
+
+The system uses the following techniques:
+- HOG (Histogram of Oriented Gradients) for feature extraction
+- Support Vector Machine (SVM) with RBF kernel for classification
+- Standard scaling of features for better model performance
+
+## Note
+
+The accuracy of blood group prediction depends on:
+- Quality of fingerprint images
+- Size of the training dataset
+- Proper preprocessing of images
+- Correct labeling of training data
+
+Please ensure that your fingerprint images are:
+- Clear and well-focused
+- Properly aligned
+- In grayscale format
+- Of reasonable size (they will be resized to 128x128 pixels)
