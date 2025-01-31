@@ -1,0 +1,11 @@
+•	Python 3.9 or higher
+•	 OpenCV
+•	 scikit-learn
+•	scikit-image
+•	 numpy
+•	pandas
+•	tqdm
+•	 Flask (for web interface)
+•	 boto3 (for AWS S3 integration)
+•	 requests
+
