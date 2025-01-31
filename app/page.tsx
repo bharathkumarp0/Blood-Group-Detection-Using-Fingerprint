@@ -7,7 +7,8 @@ import { useState } from "react";
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleImageChange = (event) => {
+  const handleImageChange = (const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+) => {
     const file = event.target.files[0];
     if (file) {
       setSelectedImage(file);
